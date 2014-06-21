@@ -37,6 +37,12 @@
 
         <div id="food-info-screen" class="screen current">
             <nav id="food-info-top-bar" class="top-bar">
+                <ul id="food-info-top-bar-buttons">
+                    <li class="food-info-top-bar-button" id="food-sort-expiration">(Expire Date)</li>
+                    <li class="food-info-top-bar-button" id="food-sort-quantity">(Quantity)</li>
+                    <li class="food-info-top-bar-button" id="add-new-food">(Add New Item)</li>
+                    <li class="food-info-top-bar-button" id="food-settings">(Settings)</li>
+                </ul>
                 <ul id="food-info-top-bar-categories" class="top-bar-list">   
                     <li class="food-info-categories-item top-bar-item">Meals</li>
                     <li class="food-info-categories-item top-bar-item">Meats</li>
@@ -64,10 +70,16 @@
             </div>
         </div>
         
-        <div id="shopping-list-wrapper">
-            <div id="shopping-list">
+        <div id="#shoping-list-screen" class="screen">
+            <nav>
+
+            </nav>
+            <div id="shopping-list-wrapper">
+                <div id="shopping-list">
+                    
+                </div>
             </div>
-        </div>
+        </div>    
     </div>
     
 <!--    TEMPLATES-->
@@ -152,6 +164,7 @@
     <script src="scripts/main.js"></script>
     <script src="libs/jquery-2.1.1.min.js"></script>
     <script src="scripts/menuWindowsSwitch.js"></script>
+    <script src="scripts/productsFilters.js"></script>
     <script>
         window.onload = function()        {
             var products= data.currentProducts;
