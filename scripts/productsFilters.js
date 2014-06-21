@@ -1,4 +1,4 @@
-$(function () {
+(function () {
     var $foodNav = $('#food-info-top-bar');
 
     var $productsFilterMenu;
@@ -11,8 +11,6 @@ $(function () {
 
         $('#products').empty().append(sorted);
     });
-
-    console.log($('.recipe'))
 
     $('#food-info-top-bar-categories').on('click', 'li', function (ev) {
         var categoryTitle = ev.target.innerHTML.toLowerCase();
@@ -29,6 +27,7 @@ $(function () {
         });
     });
 
+
     $('.product-container').on('click', function () {
         var $this = this;
         $this.next('.product-options').slideDown();
@@ -40,4 +39,4 @@ $(function () {
 
         return parseInt(remainingDaysFirst) > parseInt(remainingDaysSecond) ? 1 : -1;
     }
-});
+}());
