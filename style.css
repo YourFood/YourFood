@@ -99,9 +99,15 @@ body {
 }
 .list-style .product-container .right-side {
   margin-left: 1%;
-  width: 60%;
+  width: 90%;
   height: 100%;
   float: left;
+}
+.list-style .product-container .right-side .product-specs {
+  width: 30%;
+  top: 40%;
+  right: 5%;
+  position: absolute;
 }
 .list-style .product-container .right-side h1 {
   font-size: 1.4rem;
