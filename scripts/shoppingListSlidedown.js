@@ -1,5 +1,5 @@
 $(function () {
-    var $recipeContainer = $('#recipies-info-btn');
+    var $recipeContainer = $('#recipes-info-btn');
 
     $recipeContainer.on('click', function(){
         var $recipe = $('.recipe');
