@@ -17,6 +17,20 @@ body {
     font-size: 18px;
 }
 
+.clearfix, .left-side, .right-side, .product-container {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
 // Colors
 @white-blue: #D4D4E7;
 @light-blue: #A4A4CB;
@@ -211,13 +225,14 @@ body {
             position: relative;
             color: #333;
             
+            
             .left-side {
                 width: 30%;
                 height: 100%;
-                display: table-cell;
+                float: left;
 
                 .image-holder {
-                    width: 100%;
+                    width: 21%;
                     border: 1px solid black;
 
                     img {
@@ -229,10 +244,9 @@ body {
             }
 
             .right-side{
-                display: table-cell;
-                padding: 1%;
                 width: 60%;
                 height: 100%;
+                float: left;
 
                 h1 {
                     font-size: 1.4rem;
