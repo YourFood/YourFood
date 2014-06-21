@@ -109,8 +109,7 @@ body {
         }
     }
     
-    #food-info-screen {      
-        display: block;
+    #food-info-screen {
         
         .top-bar {
             height: @food-info-top-bar-height;;
@@ -134,33 +133,12 @@ body {
                 height: 100%;
                 overflow-y: scroll;
                 
-                .product-container {
-                    width: 100%;
-                    padding: 2%;
-                    border-bottom: 1px solid black;
-                    
-                    .image-holder {
-                        
-                        img {
-                            display: block;
-                            width: 50%;
-                            height: 30%;
-                        }
-                    }
-                               
-                    .product-specs {
-                    }
-                    
-                    ul {
-                        list-style-type: none;
-                    }
-                }
+                
             }
         }     
     }
     
     #recipies-screen {
-        display: none;
         
         .top-bar {
             height: @recipies-top-bar-height;
@@ -176,7 +154,6 @@ body {
     }
     
     #shoping-list-screen {
-        display: none;
         
         .top-bar {
             height: @shoping-list-top-bar-height;
@@ -192,6 +169,7 @@ body {
     }
     
     .screen {
+        display: none;
         width: @screens-width;
         height: @screens-height;
         position: absolute;
@@ -223,5 +201,56 @@ body {
                 }
             }
         }
-    }  
+    }
+    
+    .list-style {
+        .product-container {
+            width: 100%;
+            padding: 1%;
+            border-bottom: 1px solid @mid-blue;
+            position: relative;
+            color: #333;
+            
+            .left-side {
+                width: 30%;
+                height: 100%;
+                display: table-cell;
+
+                .image-holder {
+                    width: 100%;
+                    border: 1px solid black;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            .right-side{
+                display: table-cell;
+                padding: 1%;
+                width: 60%;
+                height: 100%;
+
+                h1 {
+                    font-size: 1.4rem;
+                }
+                
+                .product-specs {
+                    
+                }
+
+                ul {
+                    list-style-type: none;
+                    font-size: 0.8rem;
+                }
+            }       
+        }
+    }
+    
+    .current {
+        display: block;
+    }
 }

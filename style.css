@@ -42,9 +42,6 @@ body {
   height: 33.33333333%;
   border: 1px solid #47478b;
 }
-#wrapper #food-info-screen {
-  display: block;
-}
 #wrapper #food-info-screen .top-bar {
   height: 5%;
 }
@@ -64,22 +61,6 @@ body {
   height: 100%;
   overflow-y: scroll;
 }
-#wrapper #food-info-screen #products-wrapper #products .product-container {
-  width: 100%;
-  padding: 2%;
-  border-bottom: 1px solid black;
-}
-#wrapper #food-info-screen #products-wrapper #products .product-container .image-holder img {
-  display: block;
-  width: 50%;
-  height: 30%;
-}
-#wrapper #food-info-screen #products-wrapper #products .product-container ul {
-  list-style-type: none;
-}
-#wrapper #recipies-screen {
-  display: none;
-}
 #wrapper #recipies-screen .top-bar {
   height: 5%;
 }
@@ -88,9 +69,6 @@ body {
 }
 #wrapper #recipies-screen .top-bar .top-bar-list .top-bar-item {
   width: 25%;
-}
-#wrapper #shoping-list-screen {
-  display: none;
 }
 #wrapper #shoping-list-screen .top-bar {
   height: 5%;
@@ -102,6 +80,7 @@ body {
   width: 25%;
 }
 #wrapper .screen {
+  display: none;
   width: 84%;
   height: 100%;
   position: absolute;
@@ -129,4 +108,41 @@ body {
 }
 #wrapper .top-bar .top-bar-list .top-bar-item:first-of-type {
   border: none;
+}
+#wrapper .list-style .product-container {
+  width: 100%;
+  padding: 1%;
+  border-bottom: 1px solid #7373ab;
+  position: relative;
+  color: #333;
+}
+#wrapper .list-style .product-container .left-side {
+  width: 30%;
+  height: 100%;
+  display: table-cell;
+}
+#wrapper .list-style .product-container .left-side .image-holder {
+  width: 100%;
+  border: 1px solid black;
+}
+#wrapper .list-style .product-container .left-side .image-holder img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#wrapper .list-style .product-container .right-side {
+  display: table-cell;
+  padding: 1%;
+  width: 60%;
+  height: 100%;
+}
+#wrapper .list-style .product-container .right-side h1 {
+  font-size: 1.4rem;
+}
+#wrapper .list-style .product-container .right-side ul {
+  list-style-type: none;
+  font-size: 0.8rem;
+}
+#wrapper .current {
+  display: block;
 }
