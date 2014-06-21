@@ -12,17 +12,17 @@
         <div id="left-side-bar">
             <div id="logo-container">(Logo)</div>
             <ul id="screen-tabs-menu">
-                <li class="left-side-item selected">
+				<li class="left-side-item selected" id="food-info-btn">
                    <div class="icon-container">
                        <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                    </div>          
                 </li>
-                <li class="left-side-item">
-                    <div class="icon-container">
+				<li class="left-side-item" id="recipies-info-btn">
+					<div class="icon-container" >
                         <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                     </div>
                 </li>
-                <li class="left-side-item">
+				<li class="left-side-item" id="shopping-info-btn">
                     <div class="icon-container">
                         <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                     </div>
@@ -54,9 +54,13 @@
                     <li class="food-info-categories-item top-bar-item">New</li>
                 </ul>
             </nav>
+            <div id="recipies-content">
+            </div>
         </div>
         
-        <div id="shoping-list-screen" class="screen">       
+        <div id="shoping-list-screen" class="screen">
+            <div id="shopping-list">
+            </div>
         </div>
     </div>
     <script id="product-template" type='text/x-handlebars-template'>
@@ -80,6 +84,50 @@
         </div>
         {{/products}}
     </script>
+
+    <script id="shopping-list-template" type='text/x-handlebars-template'>
+        <div class="shopping-list-container">
+            <p>
+                Active :<strong>{{#if shoppingList.isActive}} true{{else}} False {{/if}}</strong> Date : <strong>{{shoppingList.created}}</strong> <strong>CHECKER/TICK</strong>
+            </p>
+        </div>
+        {{#shoppingList.products}}
+        <div class="shopping-list-products-container">
+            <img src="{{image}}" alt="no-image"/>
+            <h1>{{name}}</h1>
+            <div class="shopping-list-product-specs">
+                <ul>
+                    <li>Type: {{type}}</li>
+                    <li>Units: {{unit}}</li>
+                    <li>Quantity: {{quantity}}</li>
+                </ul>
+            </div>
+        </div>
+        {{/shoppingList.products}}
+    </script>
+
+
+    <script id="recipies-template" type='text/x-handlebars-template'>
+        <div class="recipies-container">
+            {{#recipies}}
+            <div class="recipe">
+                <h3>{{name}}</h3>
+                <img src="{{image}}" alt="no-recipe img"/>
+                <ul class="recipe-products">
+                    {{#products}}
+                    <li>
+                        <img src="{{image}}"/>
+                        <strong>{{name}} {{quantity}} {{unit}}</strong>
+                    </li>
+                    {{/products}}
+                </ul>
+                <p>
+                    {{description}} <span>{{this.getRating}}</span>
+                </p>
+            </div>
+            {{/recipies}}
+        </div>
+    </script>
     <script src="libs/handlebars-v1.3.0.js"></script>
     <script src="scripts/globalConstants.js"></script>
     <script src="modules/kitchenManager.js"></script>
@@ -88,11 +136,31 @@
     <script src="scripts/kitchenObjects.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="scripts/menu-windows-switch.js"></script>
     <script>
         window.onload = function()        {
-            var products = globalManager.kitchenManager.availableProducts;
+            var products= data.currentProducts;
             var productsContainer = document.getElementById('products');
             var productsTemplate = Handlebars.compile((document.getElementById('product-template').innerHTML));
+
+            var shoppingList = data.shoppingList;
+            shoppingList.created = new Date();
+            shoppingList.img = 'some img';
+            var shoppingListContainer = document.getElementById('shopping-list');
+            var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
+
+            var recipies = data.currentRecipes;
+            var recipiesContainer = document.getElementById('recipies-content');
+            var recipiesTemplate = Handlebars.compile(document.getElementById('recipies-template').innerHTML);
+
+            recipiesContainer.innerHTML = recipiesTemplate({
+                recipies : recipies
+            });
+
+            shoppingListContainer.innerHTML = shoppingListTemplate({
+                shoppingList : shoppingList
+            });
 
             productsContainer.innerHTML = productsTemplate({
                 products: products
