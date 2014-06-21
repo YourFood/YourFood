@@ -29,6 +29,10 @@ body {
 }
 #left-side-bar #logo-container {
   width: 100%;
+  color: #DDD;
+  text-align: center;
+  font-size: 1.4rem;
+  padding-top: 45%;
   height: 25%;
 }
 #left-side-bar ul#screen-tabs-menu {
@@ -73,7 +77,9 @@ body {
 }
 .top-bar .top-bar-list {
   width: 100%;
+  list-style-type: none;
 }
 .top-bar .top-bar-list .top-bar-item {
   height: 100%;
+  padding: 0.7%;
 }

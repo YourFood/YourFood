@@ -77,17 +77,40 @@ body {
     
     .top-bar {
         height: @food-info-top-bar-height;
-        background-color: @dark-blue;
+        border-bottom:1px solid @light-blue;
 
         .top-bar-list {
-            height: @food-info-top-bar-list-height;
-            list-style-type: none;
-
-            .top-bar-item {
-                width: @food-info-top-bar-item-width;
-                float:left;
-            }
+            height: @food-info-top-bar-list-height;      
         }    
+    }
+    
+    #food-info-top-bar-buttons {
+        background-color: @light-blue;
+        color: @white-blue;
+        
+        .food-info-top-bar-button {          
+            float: left;
+        }
+    }
+    
+    #food-info-top-bar-categories {
+        color: #555;
+        
+        .food-info-categories-item {
+            text-align: center;
+            width: @food-info-top-bar-item-width;
+            float:left;
+            border-bottom: 1px solid #555;
+            border-left: 1px solid #555;
+            
+            &:first-of-type {
+                border-left: none;
+            }
+            
+            &.selected-catagory {
+                border-bottom: 4px solid green;
+            }
+        }
     }
 
     #products-wrapper {
@@ -95,6 +118,7 @@ body {
         height: 100% - @food-info-top-bar-height;
         
         #products {
+
              .product-options {
                  display: none;
              }
