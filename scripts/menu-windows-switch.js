@@ -1,9 +1,15 @@
 $(function () {
 
-    var $foodInfo = $('food-info-screen');
+    var $screenMenu = $('#screen-tabs-menu');
 
-    $foodInfo.on('click', function () {
-        alert('FOOD!!!!');
-    },true);
+    $screenMenu.children().each(function(){
+        var $this = $(this);
 
+        $this.on('click', function () {
+            $('.selected').removeClass('selected');
+            $this.addClass('selected');
+            $('.current').removeClass('current');
+            $('#' + $this.data('info')).addClass('current');
+        })
+    });
 });

@@ -12,13 +12,13 @@
     <div id="left-side-bar">
         <div id="logo-container">(Logo)</div>
         <ul id="screen-tabs-menu">
-            <li class="left-side-item">(Food Info)</li>
-            <li class="left-side-item">(Recipies)</li>
-            <li class="left-side-item">(Store List)</li>
+            <li class="left-side-item" id="food-info-btn" data-info="food-info-screen">(Food Info)</li>
+            <li class="left-side-item" id="recipies-screen-btn" data-info="recipies-screen">(Recipies)</li>
+            <li class="left-side-item" id="shopping-list-btn" data-info="shopping-list-screen">(Shopping List)</li>
         </ul>
     </div>
 
-    <div id="food-info-screen" class="screen" style="z-index: 100">
+    <div id="food-info-screen" class="screen current">
         <nav id="food-info-top-bar" class="top-bar">
             <ul id="food-info-top-bar-categories" class="top-bar-list">
                 <li class="food-info-categories-item top-bar-item">Meals</li>
@@ -29,7 +29,7 @@
             </ul>
         </nav>
         <div id="products-wrapper">
-            <div id="products"></div>
+            <div id="products" class="list-style"></div>
         </div>
     </div>
 
@@ -42,12 +42,11 @@
                 <li class="food-info-categories-item top-bar-item">New</li>
             </ul>
         </nav>
-
-        <div id="recipies-content">
+        <div id="recipes-content">
         </div>
     </div>
 
-    <div id="shoping-list-screen" class="screen">
+    <div id="shopping-list-screen" class="screen">
         <div id="shopping-list">
         </div>
     </div>
@@ -55,13 +54,19 @@
 <script id="product-template" type='text/x-handlebars-template'>
     {{#products}}
     <div class="product-container">
-        <img src="{{image}}" alt="no-image"/>
-        <h1>{{name}}</h1>
-        <div class="product-specs">
-            <ul>
+        <div class="left-side">
+            <div class="image-holder">
+                <img src="{{image}}" alt="no-image"/>
+            </div>
+
+        </div>
+        <div class="right-side">
+            <h1>{{name}}</h1>
+            <ul class="product-specs">
                 <li>Type: {{type}}</li>
                 <li>Units: {{unit}}</li>
                 <li>Quantity: {{quantity}}</li>
+                <li>Expires in: {{expirationDate}} days</li>
             </ul>
         </div>
     </div>
@@ -76,7 +81,7 @@
     </div>
     {{#shoppingList.products}}
     <div class="shopping-list-products-container">
-        <img src="{{source}}" alt="no-image"/>
+        <img src="{{image}}" alt="no-image"/>
         <h1>{{name}}</h1>
         <div class="shopping-list-product-specs">
             <ul>
@@ -90,7 +95,7 @@
 </script>
 
 
-<script id="recipies-template" type='text/x-handlebars-template'>
+<script id="recipes-template" type='text/x-handlebars-template'>
     <div class="recipies-container">
         {{#recipies}}
         <div class="recipe">
@@ -111,11 +116,16 @@
         {{/recipies}}
     </div>
 </script>
-
 <script src="libs/handlebars-v1.3.0.js"></script>
 <script src="scripts/globalConstants.js"></script>
+<script src="modules/kitchenManager.js"></script>
+<script src="modules/recipesManager.js"></script>
+<script src="modules/shoppingListManger.js"></script>
 <script src="scripts/kitchenObjects.js"></script>
 <script src="scripts/data.js"></script>
+<script src="scripts/main.js"></script>
+<script src="libs/jquery-2.1.1.min.js"></script>
+<script src="scripts/menu-windows-switch.js"></script>
 <script>
     window.onload = function()        {
         var products= data.currentProducts;
@@ -128,9 +138,9 @@
         var shoppingListContainer = document.getElementById('shopping-list');
         var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
 
-        var recipies = data.currentRecipies;
-        var recipiesContainer = document.getElementById('recipies-content');
-        var recipiesTemplate = Handlebars.compile(document.getElementById('recipies-template').innerHTML);
+        var recipies = data.currentRecipes;
+        var recipiesContainer = document.getElementById('recipes-content');
+        var recipiesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
 
         recipiesContainer.innerHTML = recipiesTemplate({
             recipies : recipies
