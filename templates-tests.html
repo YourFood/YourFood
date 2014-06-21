@@ -8,80 +8,145 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="left-side-bar">
-            <div id="logo-container">(Logo)</div>
-            <ul id="screen-tabs-menu">
-                <li class="left-side-item">(Food Info)</li>
-                <li class="left-side-item">(Recipies)</li>
-                <li class="left-side-item">(Store List)</li>
-            </ul>
-        </div>
+<div id="wrapper">
+    <div id="left-side-bar">
+        <div id="logo-container">(Logo)</div>
+        <ul id="screen-tabs-menu">
+            <li class="left-side-item">(Food Info)</li>
+            <li class="left-side-item">(Recipies)</li>
+            <li class="left-side-item">(Store List)</li>
+        </ul>
+    </div>
 
-        <div id="food-info-screen" class="screen">
-            <nav id="food-info-top-bar" class="top-bar">
-                <ul id="food-info-top-bar-categories" class="top-bar-list">   
-                    <li class="food-info-categories-item top-bar-item">Meals</li>
-                    <li class="food-info-categories-item top-bar-item">Meats</li>
-                    <li class="food-info-categories-item top-bar-item">Dairy</li>
-                    <li class="food-info-categories-item top-bar-item">Fruits</li>
-                    <li class="food-info-categories-item top-bar-item">Vegetables</li>
-                </ul>
-            </nav>
-            <div id="products-wrapper">
-				<div id="products"></div>
-            <div>
-                <div id="products">
-                </div>
-            </div>
-        </div>
-        
-        <div id="recipies-screen" class="screen">
-            <nav id="recipies-top-bar" class="top-bar">
-                <ul id="recipies-top-bar-categories" class="top-bar-list">   
-                    <li class="food-info-categories-item top-bar-item">Favourites</li>
-                    <li class="food-info-categories-item top-bar-item">Trending</li>
-                    <li class="food-info-categories-item top-bar-item">Recomended</li>
-                    <li class="food-info-categories-item top-bar-item">New</li>
-                </ul>
-            </nav>
-        </div>
-        
-        <div id="shoping-list-screen" class="screen">       
+    <div id="food-info-screen" class="screen" style="z-index: 100">
+        <nav id="food-info-top-bar" class="top-bar">
+            <ul id="food-info-top-bar-categories" class="top-bar-list">
+                <li class="food-info-categories-item top-bar-item">Meals</li>
+                <li class="food-info-categories-item top-bar-item">Meats</li>
+                <li class="food-info-categories-item top-bar-item">Dairy</li>
+                <li class="food-info-categories-item top-bar-item">Fruits</li>
+                <li class="food-info-categories-item top-bar-item">Vegetables</li>
+            </ul>
+        </nav>
+        <div id="products-wrapper">
+            <div id="products"></div>
         </div>
     </div>
-    <script id="product-template" type='text/x-handlebars-template'>
-        {{#products}}
-        <div class="product-container">
-            <img src="{{source}}" alt="no-image"/>
-            <h1>{{name}}</h1>
-            <div class="product-specs">     
-                <ul>
-                    <li>Type: {{type}}</li>
-                    <li>Units: {{unit}}</li>
-                    <li>Quantity: {{quantity}}</li>
-                    <li>Expire date: {{expirationDate}}</li>
-                    <li>Purchased on: {{purchaseDate}}</li>
-                </ul>
+
+    <div id="recipies-screen" class="screen">
+        <nav id="recipies-top-bar" class="top-bar">
+            <ul id="recipies-top-bar-categories" class="top-bar-list">
+                <li class="food-info-categories-item top-bar-item">Favourites</li>
+                <li class="food-info-categories-item top-bar-item">Trending</li>
+                <li class="food-info-categories-item top-bar-item">Recomended</li>
+                <li class="food-info-categories-item top-bar-item">New</li>
+            </ul>
+        </nav>
+
+        <div id="recipies-content">
+        </div>
+    </div>
+
+    <div id="shoping-list-screen" class="screen">
+        <div>
+            <div id="shopping-list">
             </div>
         </div>
-        {{/products}}
-    </script>
-    <script src="libs/handlebars-v1.3.0.js"></script>
-    <script src="scripts/globalConstants.js"></script>
-    <script src="scripts/kitchenObjects.js"></script>
-    <script src="scripts/data.js"></script>
-    <script>
-        window.onload = function()        {
-            var products= data.currentProducts;
-            var productsContainer = document.getElementById('products');
-            var productsTemplate = Handlebars.compile((document.getElementById('product-template').innerHTML));
+    </div>
+</div>
+<script id="product-template" type='text/x-handlebars-template'>
+    {{#products}}
+    <div class="product-container">
+        <img src="{{image}}" alt="no-image"/>
+        <h1>{{name}}</h1>
+        <div class="product-specs">
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Units: {{unit}}</li>
+                <li>Quantity: {{quantity}}</li>
+            </ul>
+        </div>
+    </div>
+    {{/products}}
+</script>
 
-            productsContainer.innerHTML = productsTemplate({
-                products: products
-            });
-        }
-    </script>
+<script id="shopping-list-template" type='text/x-handlebars-template'>
+    <div class="shopping-list-container">
+        <p>
+            Active :<strong>{{#if shoppingList.isActive}} true{{else}} False {{/if}}</strong> Date : <strong>{{shoppingList.created}}</strong> <strong>CHECKER/TICK</strong>
+        </p>
+    </div>
+    {{#shoppingList.products}}
+    <div class="shopping-list-products-container">
+        <img src="{{source}}" alt="no-image"/>
+        <h1>{{name}}</h1>
+        <div class="shopping-list-product-specs">
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Units: {{unit}}</li>
+                <li>Quantity: {{quantity}}</li>
+            </ul>
+        </div>
+    </div>
+    {{/shoppingList.products}}
+</script>
+
+
+<script id="recipies-template" type='text/x-handlebars-template'>
+    <div class="recipies-container">
+        {{#recipies}}
+        <div class="recipe">
+            <h3>{{name}}</h3>
+            <img src="{{image}}" alt="no-recipe img"/>
+            <ul class="recipe-products">
+                {{#products}}
+                <li>
+                    <img src="{{image}}"/>
+                    <strong>{{name}} {{quantity}} {{unit}}</strong>
+                </li>
+                {{/products}}
+            </ul>
+            <p>
+                {{description}} <span>{{this.getRating}}</span>
+            </p>
+        </div>
+        {{/recipies}}
+    </div>
+</script>
+
+<script src="libs/handlebars-v1.3.0.js"></script>
+<script src="scripts/globalConstants.js"></script>
+<script src="scripts/kitchenObjects.js"></script>
+<script src="scripts/data.js"></script>
+<script>
+    window.onload = function()        {
+        var products= data.currentProducts;
+        var productsContainer = document.getElementById('products');
+        var productsTemplate = Handlebars.compile((document.getElementById('product-template').innerHTML));
+
+        var shoppingList = data.shoppingList;
+        shoppingList.created = new Date();
+        shoppingList.img = 'some img';
+        var shoppingListContainer = document.getElementById('shopping-list');
+        var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
+
+        var recipies = data.currentRecipies;
+        var recipiesContainer = document.getElementById('recipies-content');
+        var recipiesTemplate = Handlebars.compile(document.getElementById('recipies-template').innerHTML);
+
+        recipiesContainer.innerHTML = recipiesTemplate({
+            recipies : recipies
+        });
+
+        shoppingListContainer.innerHTML = shoppingListTemplate({
+            shoppingList : shoppingList
+        });
+
+        productsContainer.innerHTML = productsTemplate({
+            products: products
+        });
+    }
+</script>
 </body>
 
 </html>
