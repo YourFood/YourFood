@@ -7,8 +7,8 @@ var Kitchen = (function() {
         this.type = type;
         this.unit = unit;
         this.quantity = quantity;
-        this.expirationDate = expirationDate || GlobalConstants.DEFAULT_EXPIRATION_DATES[type];
         this.purchaseDate = new Date();
+        this.expirationDate = expirationDate || getExpirationDate(new this.purchaseDate, GlobalConstants.DEFAULT_EXPIRATION_DATES[type]);
     }
 
     function Recipe(name, image, description, products) {
@@ -41,6 +41,13 @@ var Kitchen = (function() {
         this.addProduct = function(product) {
             this.products.push(product);
         }
+    }
+
+    function getExpirationDate(currentDate, days) {
+        var expirationDate = currentDate.setDate(currentDate.getDate() + days);
+        var formattedExpirationDate = expirationDate.getDate() + ' - ' + expirationDate.getMonth();
+
+        return formattedExpirationDate;
     }
 
     return {

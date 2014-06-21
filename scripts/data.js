@@ -53,6 +53,6 @@ var data = (function() {
     return {
         currentProducts: currentProducts,
         shoppingList: shoppingList,
-        currentRecipies: currentRecipies
+        currentRecipes: currentRecipies
     }
 }());

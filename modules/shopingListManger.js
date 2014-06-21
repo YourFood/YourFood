@@ -12,14 +12,6 @@ var shoppingListManager = function () {
         // TODO: implement showing of current lists
     }
 
-    function getCurrentLists(){
-        return currentLists;
-    }
-
-    function getHistory(){
-        return historyLists;
-    }
-
     function updateLists(){
         moveInnActivesToHistory();
     }

@@ -1,6 +1,6 @@
 var kitchenManager = (function () {
     function KitchenManager() {
-        this.availableProducts = data.currentProducts;
+        this.availableProducts = [];
     }
 
     function addProduct(product) {

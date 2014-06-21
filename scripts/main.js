@@ -1,14 +1,15 @@
-(function() {
+(function () {
     var kitchenManager = new kitchenManager.KitchenManager();
-    var productsListManager = new shoppingListManager.ShoppingListManager();
     var recipesManager = new recipesManager.RecipesManager();
+    var shoppingListManager = new shoppingListManager.ShoppingListManager();
 
-    initializeData(kitchenManager, productsListManager, recipesManager);
+    initializeData();
 
-
-    function initializeData(kitchenManager, productsListManager, recipesManager) {
+    function initializeData() {
         kitchenManager.availableProducts = data.currentProducts;
-        productsListManager.currentList = data.shoppingList;
-        recipesManager.recipiesList = data.currentRecipies;
+        recipesManager.recipiesList = data.currentRecipes;
+        shoppingListManager.currentList = data.shoppingList;
     }
 }());
+
+
