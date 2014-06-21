@@ -13,6 +13,10 @@ var data = (function() {
         new Kitchen.Product('Turkey', '', 'Meat', 'kg', 2)
     ];
 
+    var allProducts = [
+
+    ];
+
     var currentLists = [];
 
     var currentRecipies = [
@@ -45,8 +49,6 @@ var data = (function() {
         new Kitchen.Product('Olive oil', '', 'Seasoning', 'table spoon', 4),
         new Kitchen.Product('Salt', '', 'Seasoning', 'kg')
     ];
-
-
 
     return {
         currentProducts: currentProducts,

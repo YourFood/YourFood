@@ -5,7 +5,12 @@ var GlobalConstants = (function () {
         Dairy: 10
     }
 
+    var IMAGE_PATHS = {
+
+    }
+
     return {
-        DEFAULT_EXPIRATION_DATES: DEFAULT_EXPIRATION_DATES
+        DEFAULT_EXPIRATION_DATES: DEFAULT_EXPIRATION_DATES,
+        IMAGE_PATHS: IMAGE_PATHS
     }
 }());

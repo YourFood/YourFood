@@ -1,10 +1,7 @@
 var shoppingListManager = function () {
-
-    var historyLists = [];
-    var currentLists = [];
-
-    function ShoppingListManager(initializingList) {
-        this.currentLists.push(initializingList);
+    function ShoppingListManager() {
+        this.currentList = [];
+        this.historyLists = [];
     }
 
     function showHistoryLists(){
@@ -50,6 +47,7 @@ var shoppingListManager = function () {
         ShowHistory : showHistoryLists(),
         ShowCurrent : showCurrentLists(),
         GetCurrentLists: getCurrentLists(),
-        GetHistory: getHistory()
+        GetHistory: getHistory(),
+        ShoppingListManager: ShoppingListManager
     }
 };
