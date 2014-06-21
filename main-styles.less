@@ -1,0 +1,120 @@
+html, body, div, ul, li, h1, img, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Colors
+@white-blue: #D4D4E7;
+@light-blue: #A4A4CB;
+@mid-blue: #7373AB;
+@dark-blue: #47478B;
+
+// Wrapper Variables
+@wrapper-width: 1024px;
+@wrapper-height: 700px;
+
+// Left-Side-Bar Variables
+@left-side-bar-width: 16%;
+@left-side-items-count: 3;
+
+// Logo Container
+@logo-container-height: 25%;
+
+// Left-Side-Bar List
+@left-side-menu-height: 100% - @logo-container-height;
+
+// Left-Side-Bar Items
+@left-side-item-height: 100% / @left-side-items-count;
+
+// Screens Variables
+@screens-width: 100% - @left-side-bar-width;
+
+// Top Bar Variables
+@top-bar-list-height: 5%;
+
+// Top Bar List 
+@top-bar-list-item-height: 100%;
+
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: @wrapper-width;
+    height: @wrapper-height;
+    position: relative;
+}
+
+#left-side-bar {
+    width: @left-side-bar-width;
+    height: 100%;
+    background-color: @mid-blue;
+
+    #logo-container {
+        width: 100%;
+        height: @logo-container-height;
+    }
+
+    ul#screen-tabs-menu {
+        list-style-type: none;
+        width: 100%;
+        height: @left-side-menu-height;
+
+        li.left-side-item {
+            width: 100%;
+            height: @left-side-item-height;
+
+            .icon-container {
+                text-align: center;
+                
+                img {
+                    margin-top: 27%;
+                    width: 45%;
+                }
+            }          
+        }
+
+        .selected {
+            background-color: @light-blue;
+        }
+    }
+}
+
+.screen {
+    display: none;
+    width: @screens-width;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: @left-side-bar-width;
+    background-color: @white-blue;
+    overflow: hidden;
+    
+    &.current {
+        display: block;
+    }
+    
+    .items-wrapper {
+        
+        .items-container{
+            
+        }
+    }
+}
+
+.top-bar {
+    width: 100%;
+
+    .top-bar-list {
+        width: 100%;
+
+        .top-bar-item {
+            height: @top-bar-list-item-height;
+        }
+    }
+}
