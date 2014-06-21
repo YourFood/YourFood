@@ -8,11 +8,24 @@ var Kitchen = (function() {
         this.unit = unit;
         this.quantity = quantity;
         this.purchaseDate = new Date();
+
+        /*
         if(expirationDate) {
             this.expirationDate = formatExpirationDate(expirationDate);
         }
         else {
             this.expirationDate = expirationDate || getExpirationDate(this.purchaseDate, GlobalConstants.DEFAULT_EXPIRATION_DATES[type]);
+        }
+*/
+        this.expirationDate = expirationDate || getExpirationDate(this.purchaseDate, GlobalConstants.DEFAULT_EXPIRATION_DATES[type]);
+
+        this.getRemainingDays = function () {
+            var currentDate = new Date();
+
+            var timeDiff = Math.abs(this.expirationDate.getTime() - currentDate.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            return diffDays;
         }
     }
 
@@ -62,6 +75,13 @@ var Kitchen = (function() {
         var formattedDate = day + ' ' + month;
 
         return formattedDate;
+    }
+
+    function getExpirationDate(purchaseDate, days) {
+        var expirationDate = new Date();
+        expirationDate.setDate(purchaseDate.getDate() + days);
+
+        return expirationDate;
     }
 
     return {
