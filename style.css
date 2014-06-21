@@ -135,12 +135,13 @@ body {
   color: #333;
 }
 #wrapper .list-style .product-container .left-side {
-  width: 30%;
+  width: 5%;
   height: 100%;
   float: left;
+  margin-right: 0.5%;
 }
 #wrapper .list-style .product-container .left-side .image-holder {
-  width: 21%;
+  width: 100%;
   border: 1px solid black;
 }
 #wrapper .list-style .product-container .left-side .image-holder img {
@@ -159,6 +160,9 @@ body {
 #wrapper .list-style .product-container .right-side ul {
   list-style-type: none;
   font-size: 0.8rem;
+}
+#wrapper .list-style .product-container .right-side ul li {
+  display: inline-block;
 }
 #wrapper .current {
   display: block;
