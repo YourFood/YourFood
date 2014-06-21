@@ -63,9 +63,10 @@ body {
 .screen.current {
   display: block;
 }
-.screen .items-wrapper {
-  width: 100%;
+.screen .items-wrapper .items-container {
+  width: 107%;
   height: 100%;
+  overflow-y: scroll;
 }
 .top-bar {
   width: 100%;
