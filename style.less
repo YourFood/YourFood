@@ -14,6 +14,14 @@ a {
 body {
     overflow: hidden;
 }
+
+// Colors
+@white-blue: #D4D4E7;
+@light-blue: #A4A4CB;
+@mid-blue: #7373AB;
+@dark-blue: #47478B;
+
+
 // Wrapper Variables
 @wrapper-width: 1024px;
 @wrapper-height: 700px;
@@ -73,29 +81,29 @@ body {
     margin: 0 auto;
     width: @wrapper-width;
     height: @wrapper-height;
-    border: 1px solid black;
+    border: 1px solid @dark-blue;
     position: relative;
     
     #left-side-bar {
         width: @left-side-bar-width;
         height: @left-side-bar-height;
+        background-color: @mid-blue;
         
         #logo-container {
             width: @logo-container-width;
             height: @logo-container-height;
-            border: 1px solid black;
+            border: 1px solid @dark-blue;
         }
         
         ul#screen-tabs-menu {
             list-style-type: none;
             width: @left-side-menu-width;
             height: @left-side-menu-height;
-            border: 1px solid black;
             
             li.left-side-item {
                 width: @left-side-item-width;
                 height: @left-side-item-height;
-                border: 1px solid black;
+                border: 1px solid @dark-blue;
             }
         }
     }
@@ -175,10 +183,12 @@ body {
         position: absolute;
         top: 0;
         left: @left-side-bar-width;
+        background-color: @white-blue;
     }
     
     .top-bar {
         width: @top-bar-width;
+        background-color: @light-blue;
         border: 1px solid black;
         
         .top-bar-list {

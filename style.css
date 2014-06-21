@@ -18,28 +18,28 @@ body {
   margin: 0 auto;
   width: 1024px;
   height: 700px;
-  border: 1px solid black;
+  border: 1px solid #47478b;
   position: relative;
 }
 #wrapper #left-side-bar {
   width: 16%;
   height: 100%;
+  background-color: #7373ab;
 }
 #wrapper #left-side-bar #logo-container {
   width: 100%;
   height: 25%;
-  border: 1px solid black;
+  border: 1px solid #47478b;
 }
 #wrapper #left-side-bar ul#screen-tabs-menu {
   list-style-type: none;
   width: 100%;
   height: 75%;
-  border: 1px solid black;
 }
 #wrapper #left-side-bar ul#screen-tabs-menu li.left-side-item {
   width: 100%;
   height: 33.33333333%;
-  border: 1px solid black;
+  border: 1px solid #47478b;
 }
 #wrapper #food-info-screen {
   border: 1px solid red;
@@ -101,9 +101,11 @@ body {
   position: absolute;
   top: 0;
   left: 16%;
+  background-color: #d4d4e7;
 }
 #wrapper .top-bar {
   width: 100%;
+  background-color: #a4a4cb;
   border: 1px solid black;
 }
 #wrapper .top-bar .top-bar-list {
