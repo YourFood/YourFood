@@ -12,9 +12,9 @@
         <div id="left-side-bar">
             <div id="logo-container">(Logo)</div>
             <ul id="screen-tabs-menu">
-                <li class="left-side-item">(Food Info)</li>
-                <li class="left-side-item">(Recipies)</li>
-                <li class="left-side-item">(Store List)</li>
+                <li class="left-side-item" id="food-info-btn">(Food Info)</li>
+                <li class="left-side-item" id="recipies-info-btn">(Recipies)</li>
+                <li class="left-side-item" id="shopping-info-btn">(Shopping List)</li>
             </ul>
         </div>
 
@@ -124,6 +124,8 @@
     <script src="scripts/kitchenObjects.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script src="scripts/menu-windows-switch.js"></script>
     <script>
         window.onload = function()        {
             var products= data.currentProducts;
