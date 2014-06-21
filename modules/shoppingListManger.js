@@ -4,36 +4,6 @@ var shoppingList = (function () {
         this.historyLists = [];
     }
 
-    function showHistoryLists(){
-        // TODO: implement showing of lists
-    }
-
-    function showCurrentLists(){
-        // TODO: implement showing of current lists
-    }
-
-    function updateLists(){
-        moveInnActivesToHistory();
-    }
-
-    function moveInnActivesToHistory(){
-        for (var i = 0; i < currentLists.length; i+=1) {
-            if(!currentLists[i].isActive){
-                historyLists.push(currentLists[i]);
-                currentLists.splice(i,1);
-            }
-        }
-    }
-
-    function changeListState(list){
-        list.isActive = false;
-        updateLists();
-    }
-
-    function addShoppingList(list){
-        currentLists.push(list);
-    }
-
     return {
         ShoppingListManager: ShoppingListManager
     }

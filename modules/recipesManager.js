@@ -3,8 +3,6 @@ var recipes = (function () {
         this.recipiesList = [];
     }
 
-
-
     return {
         RecipesManager: RecipesManager
     }

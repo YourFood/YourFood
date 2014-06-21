@@ -1,18 +1,9 @@
 var kitchen = (function () {
-    function KitchenManager() {
+    function ProductsManager() {
         this.availableProducts = [];
     }
 
-    function addProduct(product) {
-        this.currentProducts.push(product);
-    }
-
-    function removeProduct(product) {
-        
-    }
-
-
     return {
-        KitchenManager: KitchenManager
+        KitchenManager: ProductsManager
     }
 }());
