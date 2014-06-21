@@ -102,12 +102,11 @@ body {
     #left-side-bar {
         width: @left-side-bar-width;
         height: @left-side-bar-height;
-        background-color: @mid-blue;
+        background-color: @mid-blue; 
         
         #logo-container {
             width: @logo-container-width;
             height: @logo-container-height;
-            border: 1px solid @dark-blue;
         }
         
         ul#screen-tabs-menu {
@@ -118,7 +117,14 @@ body {
             li.left-side-item {
                 width: @left-side-item-width;
                 height: @left-side-item-height;
-                border: 1px solid @dark-blue;
+                
+                img {
+                    width: 30%;
+                }
+            }
+            
+            .selected {
+                background-color: @light-blue;
             }
         }
     }
