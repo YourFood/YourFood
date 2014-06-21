@@ -3,25 +3,26 @@ $(function () {
 
     var $productsFilterMenu;
     var $productsOrderMenu;
-    var $listedProducts = $('.product-container');
+    var $productOptions = $('.product-options');
 
     var $orderByExpiration = $foodNav.find('#food-sort-expiration');
-
     $orderByExpiration.on('click', function () {
+        var sorted = $('#products .product-container').sort(sortByExpirationDate);
 
+        $('#products').empty().append(sorted);
     });
-
 
     $('.product-container').on('click', function () {
         var $this = this;
         $this.next('.product-options').slideDown();
     });
 
-    var $productOptions = $('.product-options');
 
 
     function sortByExpirationDate(first, second) {
+        var remainingDaysFirst = first.find('span').text();
+        var remainingDaysSecond = second.find('span').text();
 
-
+        return remainingDaysFirst > remainingDaysSecond ? 1 : -1;
     }
 });
