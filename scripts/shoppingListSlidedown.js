@@ -1,14 +1,15 @@
 $(function () {
-    var $shoppingListContainer = $('#shopping-list');
-    console.log($shoppingListContainer);
+    var $shoppingListContainer = $('#recipes-content');
 
     $shoppingListContainer.on('click', function() {
-        console.log('clicked!');
+        var $description = $shoppingListContainer.find('p');
 
-        if ( $( "div:first" ).is( ":hidden" ) ) {
-            $shoppingListContainer.find('.shopping-list-products-container').show( "slow" );
+        if ( $description.data('info') === 'hidden-description' ) {
+            $description.data('info','');
+            $description.show( "slow" );
         } else {
-            $shoppingListContainer.find('.shopping-list-products-container').slideUp();
+            $description.data('info', 'hidden-description');
+            $description.find('.shopping-list-products-container').slideUp();
         }
     })
 
