@@ -50,15 +50,16 @@
     <script id="product-template" type='text/x-handlebars-template'>
         {{#products}}
         <div class="product-container">
-            <img src="{{source}}" alt="no-image"/>
+           <div class="image-holder">
+               <img src="{{source}}" alt="no-image"/>
+           </div>          
             <h1>{{name}}</h1>
             <div class="product-specs">     
                 <ul>
                     <li>Type: {{type}}</li>
                     <li>Units: {{unit}}</li>
                     <li>Quantity: {{quantity}}</li>
-                    <li>Expire date: {{expirationDate}}</li>
-                    <li>Purchased on: {{purchaseDate}}</li>
+                    <li>Expires in: {{expirationDate}} days</li>
                 </ul>
             </div>
         </div>
