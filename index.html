@@ -76,11 +76,17 @@
                 <h1>{{name}}</h1>     
                 <ul class="product-specs">
                     <li>Type: {{type}}</li>
-                    <li>Units: {{unit}}</li>
-                    <li>Quantity: {{quantity}}</li>
+                    <li>{{quantity}}</li>
+                    <li>{{unit}}</li>
                     <li>Expires in: {{expirationDate}} days</li>
                 </ul>
             </div>
+        </div>
+        <div class="product-options">
+            <form>
+                <input type="range" name="amountRange" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountInput.value=this.value" />
+                <input type="number" name="amountInput" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountRange.value=this.value" />
+            </form>
         </div>
         {{/products}}
     </script>
@@ -137,7 +143,7 @@
     <script src="scripts/data.js"></script>
     <script src="scripts/main.js"></script>
     <script src="libs/jquery-2.1.1.min.js"></script>
-    <script src="scripts/menu-windows-switch.js"></script>
+    <script src="scripts/menuWindowsSwitch.js"></script>
     <script>
         window.onload = function()        {
             var products= data.currentProducts;
