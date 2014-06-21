@@ -23,7 +23,7 @@
                        <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                    </div>          
                 </li>
-				<li class="left-side-item" id="recipies-info-btn" data-info="recipies-screen">
+				<li class="left-side-item" id="recipes-info-btn" data-info="recipes-screen">
 					<div class="icon-container" >
                         <img alt="fridge" src="images/left-aside-icons/book-icon.png">
                     </div>
@@ -59,13 +59,19 @@
             </div>
         </div>
           
-        <div id="recipies-screen" class="screen">
-            <nav id="recipies-top-bar" class="top-bar">
-                <ul id="recipies-top-bar-categories" class="top-bar-list">   
-                    <li class="food-info-categories-item top-bar-item">Favourites</li>
-                    <li class="food-info-categories-item top-bar-item">Trending</li>
-                    <li class="food-info-categories-item top-bar-item">Recomended</li>
-                    <li class="food-info-categories-item top-bar-item">New</li>
+        <div id="recipes-screen" class="screen">
+            <nav id="recipes-top-bar" class="top-bar">
+                <ul id="recipes-top-bar-buttons" class="top-bar-list">
+                    <li class="recipe-top-bar-button top-bar-item" id="recipes-sort-expiration">(Expire Date)</li>
+                    <li class="recipe-top-bar-button top-bar-item" id="recipes-sort-quantity">(Quantity)</li>
+                    <li class="recipe-top-bar-button top-bar-item" id="add-new-recipes">(Add New Item)</li>
+                    <li class="recipe-top-bar-button top-bar-item" id="recipes-settings">(Settings)</li>
+                </ul>
+                <ul id="recipes-top-bar-categories" class="top-bar-list">   
+                    <li class="recipe-categories-item top-bar-item selected-recipes">Favourites</li>
+                    <li class="recipe-categories-item top-bar-item">Trending</li>
+                    <li class="recipe-categories-item top-bar-item">Recomended</li>
+                    <li class="recipe-categories-item top-bar-item">New</li>
                 </ul>
             </nav>
             <div id="recipes-wrapper" class="items-wrapper">

@@ -71,17 +71,35 @@ body {
 #food-info-screen #products-wrapper #products .product-options {
   display: none;
 }
-#recipies-screen .top-bar {
-  height: 5%;
-  background-color: #47478b;
+#recipes-screen .top-bar {
+  height: 10%;
+  border-bottom: 1px solid #a4a4cb;
 }
-#recipies-screen .top-bar .top-bar-list {
-  height: 100%;
-  list-style-type: none;
+#recipes-screen .top-bar .top-bar-list {
+  height: 50%;
 }
-#recipies-screen .top-bar .top-bar-list .top-bar-item {
+#recipes-screen #recipes-top-bar-buttons {
+  background-color: #a4a4cb;
+  color: #d4d4e7;
+}
+#recipes-screen #recipes-top-bar-buttons .recipe-top-bar-button {
+  float: left;
+}
+#recipes-screen #recipes-top-bar-categories {
+  color: #555;
+}
+#recipes-screen #recipes-top-bar-categories .recipe-categories-item {
+  text-align: center;
   width: 25%;
   float: left;
+  border-bottom: 1px solid #555;
+  border-left: 1px solid #555;
+}
+#recipes-screen #recipes-top-bar-categories .recipe-categories-item:first-of-type {
+  border-left: none;
+}
+#recipes-screen #recipes-top-bar-categories .recipe-categories-item.selected-recipes {
+  border-bottom: 4px solid green;
 }
 #shoping-list-screen .top-bar {
   height: 10%;

@@ -53,16 +53,16 @@ body {
 // Food-info Top Bar Variables 
 @food-info-top-bar-lists-count: 2;
 @food-info-top-bar-items-count: 6;
-
 @food-info-top-bar-height: @top-bar-list-height * @food-info-top-bar-lists-count;
-
 @food-info-top-bar-list-height: 100% / @food-info-top-bar-lists-count;
 @food-info-top-bar-item-width: 100% / @food-info-top-bar-items-count;
 
 // Recipies Top Bar Variables 
-@recipies-top-bar-lists-count: 1;
+@recipies-top-bar-lists-count: 2;
 @recipies-top-bar-items-count: 4;
+
 @recipies-top-bar-height: @top-bar-list-height * @recipies-top-bar-lists-count;
+
 @recipies-top-bar-list-height: 100% / @recipies-top-bar-lists-count;
 @recipies-top-bar-item-width: 100% / @recipies-top-bar-items-count;
 
@@ -126,20 +126,44 @@ body {
     }     
 }
 
-#recipies-screen {
+#recipes-screen {
     .top-bar {
-        height: @recipies-top-bar-height;
-        background-color: @dark-blue;
-        
-        .top-bar-list {
-            height: @recipies-top-bar-list-height;
-            list-style-type: none;
+        height: @food-info-top-bar-height;
+        border-bottom:1px solid @light-blue;
 
-            .top-bar-item {
-                width: @recipies-top-bar-item-width;
-                float:left;
-            }
+        .top-bar-list {
+            height: @food-info-top-bar-list-height;      
         }    
+    }
+    
+        
+    #recipes-top-bar-buttons {
+        background-color: @light-blue;
+        color: @white-blue;
+        
+        .recipe-top-bar-button {          
+            float: left;
+        }      
+    }
+    
+     #recipes-top-bar-categories {
+        color: #555;
+        
+        .recipe-categories-item {
+            text-align: center;
+            width: @recipies-top-bar-item-width;
+            float:left;
+            border-bottom: 1px solid #555;
+            border-left: 1px solid #555;
+            
+            &:first-of-type {
+                border-left: none;
+            }
+            
+            &.selected-recipes {
+                border-bottom: 4px solid green;
+            }
+        }
     }
 }
 
