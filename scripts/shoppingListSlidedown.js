@@ -1,4 +1,5 @@
 $(function () {
+<<<<<<< HEAD
     var $recipeContainer = $('#recipies-info-btn');
 
     $recipeContainer.on('click', function(){

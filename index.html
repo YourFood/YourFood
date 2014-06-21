@@ -13,7 +13,7 @@
         <div id="left-side-bar">
             <div id="logo-container">
                 <div class="icon-container">
-                   <img alt="Your Food Logo" src="">
+                   <img alt="Your Food Logo">
                 </div>
             </div>
             
@@ -53,8 +53,8 @@
                     <li class="food-info-categories-item top-bar-item" id="vegetables-filter">Vegetables</li>
                 </ul>
             </nav>
-            <div id="products-wrapper">
-				<div id="products" class="list-style">
+            <div id="products-wrapper" class="items-wrapper">
+				<div id="products" class="items-container list-style">
 				</div>
             </div>
         </div>
@@ -68,8 +68,10 @@
                     <li class="food-info-categories-item top-bar-item">New</li>
                 </ul>
             </nav>
-            <div id="recipes-content">
-            </div>
+            <div id="recipes-wrapper" class="items-wrapper">
+                <div id="recipes-content"  class="items-container">
+                </div>
+            </div>          
         </div>
         
         <div id="shopping-list-screen" class="screen">
@@ -77,8 +79,7 @@
 
             </nav>
             <div id="shopping-list-wrapper">
-                <div id="shopping-list">
-                    
+                <div id="shopping-list">              
                 </div>
             </div>
         </div>    
@@ -90,7 +91,7 @@
 
         {{#products}}
         <div class="product-container">
-            <div>
+            <div class="clearfix">
                 <div class="left-side">
                     <div class="image-holder">
                         <img src="{{image}}" alt="no-image"/>
@@ -103,7 +104,7 @@
                         <li>Type: <span class="product-type">{{type}}</span></li>
                         <li>{{quantity}}</li>
                         <li>{{unit}}</li>
-                        <li>Expires in: <span>{{getRemainingDays}}</span> days</li>
+                        <li>Expires in: <span class="expires">{{getRemainingDays}}</span> days</li>
                     </ul>
                 </div>
             </div>

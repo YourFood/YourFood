@@ -12,6 +12,8 @@ $(function () {
         $('#products').empty().append(sorted);
     });
 
+    console.log($('.recipe'))
+
     $('#food-info-top-bar-categories').on('click', 'li', function (ev) {
         var categoryTitle = ev.target.innerHTML.toLowerCase();
 
@@ -33,8 +35,8 @@ $(function () {
     });
 
     function sortByExpirationDate(first, second) {
-        var remainingDaysFirst = $(first).find('span').text();
-        var remainingDaysSecond = $(second).find('span').text();
+        var remainingDaysFirst = $(first).find('.expires').text();
+        var remainingDaysSecond = $(second).find('.expires').text();
 
         return parseInt(remainingDaysFirst) > parseInt(remainingDaysSecond) ? 1 : -1;
     }

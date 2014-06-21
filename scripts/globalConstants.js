@@ -1,7 +1,7 @@
 var GlobalConstants = (function () {
     var DEFAULT_EXPIRATION_DATES = {
-        Fruit: 14,
-        Meat: 7,
+        Fruits: 14,
+        Meats: 7,
         Dairy: 10
     }
 
