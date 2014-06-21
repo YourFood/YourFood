@@ -23,7 +23,7 @@ var Kitchen = (function() {
         this.products = products;
         var ratings = [];
 
-        this.voteUp = function() {s
+        this.voteUp = function() {
             ratings[0] += 1;
         }
 

@@ -19,7 +19,7 @@ var data = (function() {
 
     var currentLists = [];
 
-    var currentRecipies = [
+    var currentRecipes = [
         new Kitchen.Recipe('Зелева салата с пилешко месо и ананас', 'images/recipies/pineapple-chicken-salad.jpg', 'Месото (200 г) се сварява в подсолена вода. Отцежда се и се накъсва. Зелето (100 г) се настъргва на ситното ренде. Половината от ананаса се нарязва на шайби, а другата – на кубчета. Месото, зелето и кубчетата ананас се смесват и овкусяват със сол, зехтин и лимонов сок. Салата се поднася върху салатен лист, декорирана с ананасови шайби и маслини.', [
             new Kitchen.Product('Chicken', '', 'Fruit', 'pcs', 5),
             new Kitchen.Product('Cabbage', '', 'Vegetable', 'kg', 0.1),
@@ -53,6 +53,6 @@ var data = (function() {
     return {
         currentProducts: currentProducts,
         shoppingList: shoppingList,
-        currentRecipes: currentRecipies
+        currentRecipes: currentRecipes
     }
 }());
