@@ -73,29 +73,33 @@
 <!--    TEMPLATES-->
     
     <script id="product-template" type='text/x-handlebars-template'>
+
         {{#products}}
         <div class="product-container">
-            <div class="left-side">
-                <div class="image-holder">
-                    <img src="{{image}}" alt="no-image"/>
-                </div>          
-               
-            </div>       
-            <div class="right-side">
-                <h1>{{name}}</h1>     
-                <ul class="product-specs">
-                    <li>Type: {{type}}</li>
-                    <li>{{quantity}}</li>
-                    <li>{{unit}}</li>
-                    <li>Expires in: {{expirationDate}} days</li>
-                </ul>
+            <div>
+                <div class="left-side">
+                    <div class="image-holder">
+                        <img src="{{image}}" alt="no-image"/>
+                    </div>
+
+                </div>
+                <div class="right-side">
+                    <h1>{{name}}</h1>
+                    <ul class="product-specs">
+                        <li>Type: {{type}}</li>
+                        <li>{{quantity}}</li>
+                        <li>{{unit}}</li>
+                        <li>Expires in: {{expirationDate}} days</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="product-options">
-            <form>
-                <input type="range" name="amountRange" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountInput.value=this.value" />
-                <input type="number" name="amountInput" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountRange.value=this.value" />
-            </form>
+
+            <div class="product-options">
+                <form>
+                    <input type="range" name="amountRange" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountInput.value=this.value" />
+                    <input type="number" name="amountInput" min="0" max="{{quantity}}" value="{{quantity}}" step="0.05" oninput="this.form.amountRange.value=this.value" />
+                </form>
+            </div>
         </div>
         {{/products}}
     </script>
@@ -105,20 +109,20 @@
             <p>
                 Active :<strong>{{#if shoppingList.isActive}} true{{else}} False {{/if}}</strong> Date : <strong>{{shoppingList.created}}</strong> <strong>CHECKER/TICK</strong>
             </p>
-        </div>
-        {{#shoppingList.products}}
-        <div class="shopping-list-products-container">
-            <img src="{{image}}" alt="no-image"/>
-            <h1>{{name}}</h1>
-            <div class="shopping-list-product-specs">
-                <ul>
-                    <li>Type: {{type}}</li>
-                    <li>Units: {{unit}}</li>
-                    <li>Quantity: {{quantity}}</li>
-                </ul>
+            {{#shoppingList.products}}
+            <div class="shopping-list-products-container">
+                <img src="{{image}}" alt="no-image"/>
+                <h1>{{name}}</h1>
+                <div class="shopping-list-product-specs">
+                    <ul>
+                        <li>Type: {{type}}</li>
+                        <li>Units: {{unit}}</li>
+                        <li>Quantity: {{quantity}}</li>
+                    </ul>
+                </div>
             </div>
+            {{/shoppingList.products}}
         </div>
-        {{/shoppingList.products}}
     </script>
 
 
@@ -152,6 +156,7 @@
     <script src="scripts/main.js"></script>
     <script src="libs/jquery-2.1.1.min.js"></script>
     <script src="scripts/menuWindowsSwitch.js"></script>
+    <script src="scripts/shoppingListSlidedown.js"></script>
     <script>
         window.onload = function()        {
             var products= data.currentProducts;
