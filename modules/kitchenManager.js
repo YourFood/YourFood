@@ -1,4 +1,4 @@
-var kitchenManager = (function () {
+var kitchen = (function () {
     function KitchenManager() {
         this.availableProducts = [];
     }

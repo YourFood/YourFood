@@ -1,4 +1,4 @@
-var recipesManager = (function () {
+var recipes = (function () {
     function RecipesManager() {
         this.recipiesList = [];
     }

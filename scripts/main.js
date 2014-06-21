@@ -1,7 +1,7 @@
 var globalManager = (function () {
-    var kitchenManager = new kitchenManager.KitchenManager();
-    var recipesManager = new recipesManager.RecipesManager();
-    var shoppingListManager = new shoppingListManager.ShoppingListManager();
+    var kitchenManager = new kitchen.KitchenManager();
+    var recipesManager = new recipes.RecipesManager();
+    var shoppingListManager = new shoppingList.ShoppingListManager();
 
     initializeData();
 

@@ -1,4 +1,4 @@
-var shoppingListManager = function () {
+var shoppingList = (function () {
     function ShoppingListManager() {
         this.currentList = [];
         this.historyLists = [];
@@ -35,11 +35,6 @@ var shoppingListManager = function () {
     }
 
     return {
-        ChangeListState : changeListState(),
-        ShowHistory : showHistoryLists(),
-        ShowCurrent : showCurrentLists(),
-        GetCurrentLists: getCurrentLists(),
-        GetHistory: getHistory(),
         ShoppingListManager: ShoppingListManager
     }
-};
+}());
