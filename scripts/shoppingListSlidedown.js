@@ -1,16 +1,8 @@
 $(function () {
     var $recipeContainer = $('#recipes-content');
     var $recipe = $recipeContainer.find('.recipe');
-    console.log($recipe);
 
-    $recipeContainer.each(function(){
-        console.log('!!!!');
-    });
-
-    $recipeContainer.on('click',function(){
-        console.log('here');
-    });
-
+    
 //    $recipeContainer.on('click', function() {
 //        console.log('here');
 //        var $description = $shoppingListContainer.find('p');

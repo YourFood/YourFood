@@ -3,14 +3,14 @@ var data = (function() {
         new Kitchen.Product('Apple', '', 'Fruits', 'pcs', 5),
         new Kitchen.Product('Banana', '', 'Fruits', 'pcs', 3),
         new Kitchen.Product('Pork', '', 'Meats', 'kg', 1.5, new Date(2014, 6, 27)),
-        new Kitchen.Product('Salmon', '', 'Fruits', 'kg', 0.5),
-        new Kitchen.Product('Milk', '', 'Dairys', 'kg', '1', new Date(2014, 6, 29)),
+        new Kitchen.Product('Salmon', '', 'Meats', 'kg', 0.5),
+        new Kitchen.Product('Milk', '', 'Dairy', 'kg', '1', new Date(2014, 6, 29)),
         new Kitchen.Product('Cheese', '', 'Dairy', 'kg', '2.5', new Date(2014, 6, 11)),
         new Kitchen.Product('Cucumber', '', 'Fruits', 'kg', 2),
-        new Kitchen.Product('Chicken breasts', '', 'Meat', 'kg', 0.6),
+        new Kitchen.Product('Chicken breasts', '', 'Meats', 'kg', 0.6),
         new Kitchen.Product('Tomato', '', 'Fruits', 'kg', 5, new Date(2014, 2, 21)),
         new Kitchen.Product('Carrot', '', 'Fruits', 'kg', 0.3, new Date(2014, 5, 5)),
-        new Kitchen.Product('Turkey', '', 'Meat', 'kg', 2)
+        new Kitchen.Product('Turkey', '', 'Meats', 'kg', 2)
     ];
 
     var allProducts = [
@@ -24,7 +24,7 @@ var data = (function() {
             new Kitchen.Product('Chicken', '', 'Fruits', 'pcs', 5),
             new Kitchen.Product('Cabbage', '', 'Vegetables', 'kg', 0.1),
             new Kitchen.Product('Pineapple', '', 'Fruits', 'pcs', 1),
-            new Kitchen.Product('Salt', '', 'Seasonings', 'kg'),
+            new Kitchen.Product('Salt', '', 'Seasonings'),
             new Kitchen.Product('Lemon Juice', '', 'Juices', 'table spoon', 2),
             new Kitchen.Product('Olive oil', '', 'Seasonings', 'table spoon', 1)
         ]),
