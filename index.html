@@ -10,7 +10,12 @@
 <body>
     <div id="wrapper">
         <div id="left-side-bar">
-            <div id="logo-container">(Logo)</div>
+            <div id="logo-container">
+                <div class="icon-container">
+                   <img alt="Your Food Logo" src="">
+                </div>
+            </div>
+            
             <ul id="screen-tabs-menu">
 				<li class="left-side-item selected" id="food-info-btn" data-info="food-info-screen">
                    <div class="icon-container">
@@ -19,12 +24,12 @@
                 </li>
 				<li class="left-side-item" id="recipies-info-btn" data-info="recipies-screen">
 					<div class="icon-container" >
-                        <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
+                        <img alt="fridge" src="images/left-aside-icons/book-icon.png">
                     </div>
                 </li>
 				<li class="left-side-item" id="shopping-info-btn" data-info="shopping-list-screen">
                     <div class="icon-container">
-                        <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
+                        <img alt="fridge" src="images/left-aside-icons/checklist.png">
                     </div>
                 </li>
             </ul>
@@ -41,10 +46,11 @@
                 </ul>
             </nav>
             <div id="products-wrapper">
-				<div id="products" class="list-style"></div>
+				<div id="products" class="list-style">
+				</div>
             </div>
         </div>
-        
+          
         <div id="recipies-screen" class="screen">
             <nav id="recipies-top-bar" class="top-bar">
                 <ul id="recipies-top-bar-categories" class="top-bar-list">   
@@ -58,11 +64,14 @@
             </div>
         </div>
         
-        <div id="shopping-list-screen" class="screen">
+        <div id="shopping-list-wrapper">
             <div id="shopping-list">
             </div>
         </div>
     </div>
+    
+<!--    TEMPLATES-->
+    
     <script id="product-template" type='text/x-handlebars-template'>
         {{#products}}
         <div class="product-container">
@@ -122,7 +131,6 @@
                 <ul class="recipe-products">
                     {{#products}}
                     <li>
-                        <img src="{{image}}"/>
                         <strong>{{name}} {{quantity}} {{unit}}</strong>
                     </li>
                     {{/products}}

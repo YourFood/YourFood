@@ -37,7 +37,6 @@ body {
 @mid-blue: #7373AB;
 @dark-blue: #47478B;
 
-
 // Wrapper Variables
 @wrapper-width: 1024px;
 @wrapper-height: 700px;
@@ -102,8 +101,8 @@ body {
     #left-side-bar {
         width: @left-side-bar-width;
         height: @left-side-bar-height;
-        background-color: @mid-blue; 
-        
+        background-color: @mid-blue;
+            
         #logo-container {
             width: @logo-container-width;
             height: @logo-container-height;
@@ -118,9 +117,13 @@ body {
                 width: @left-side-item-width;
                 height: @left-side-item-height;
                 
-                img {
-                    width: 30%;
-                }
+                .icon-container {
+                    text-align: center;
+                    img {
+                        margin-top: 27%;
+                        width: 45%;
+                    }
+                }          
             }
             
             .selected {
@@ -129,7 +132,10 @@ body {
         }
     }
     
-    #food-info-screen {
+    #food-info-screen {   
+        overflow: hidden;
+        width: 100%;
+        height: 100% - @food-info-top-bar-height;
         
         .top-bar {
             height: @food-info-top-bar-height;;
@@ -144,21 +150,19 @@ body {
         }
         
         #products-wrapper {
-            overflow: hidden;
-            width: 100%;
-            height: 100% - @food-info-top-bar-height;
-            
+        
             #products {
                 width: 107%;
                 height: 100%;
-                overflow-y: scroll;
-                
-                
+                overflow-y: scroll;              
             }
         }     
     }
     
     #recipies-screen {
+        overflow: hidden;
+        width: 100%;
+        height: 100% - @food-info-top-bar-height;
         
         .top-bar {
             height: @recipies-top-bar-height;
@@ -174,6 +178,9 @@ body {
     }
     
     #shoping-list-screen {
+        overflow: hidden;
+        width: 100%;
+        height: 100% - @food-info-top-bar-height;
         
         .top-bar {
             height: @shoping-list-top-bar-height;
@@ -230,9 +237,9 @@ body {
             border-bottom: 1px solid @mid-blue;
             position: relative;
             color: #333;
-            
-            
+                  
             .left-side {
+                margin-left: 1%;
                 width: 5%;
                 height: 100%;
                 float: left;
@@ -251,16 +258,13 @@ body {
             }
 
             .right-side{
+                margin-left: 1%;
                 width: 60%;
                 height: 100%;
                 float: left;
 
                 h1 {
                     font-size: 1.4rem;
-                }
-                
-                .product-specs {
-                    
                 }
 
                 ul {
@@ -272,6 +276,8 @@ body {
                 }
             }       
         }
+        
+        .
     }
     
     .current {
