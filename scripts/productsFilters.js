@@ -18,11 +18,11 @@ $(function () {
         $.each($('.product-container'), function () {
             var type = $(this).find('.product-type')[0].innerHTML.toLowerCase();
 
-            if (categoryTitle !== type) {
-                $(this).hide();
+            if (categoryTitle === type || categoryTitle === 'all') {
+                $(this).show();
             }
             else {
-                $(this).show();
+                $(this).hide();
             }
         });
     });
