@@ -44,11 +44,11 @@
                     <li class="food-info-top-bar-button" id="food-settings">(Settings)</li>
                 </ul>
                 <ul id="food-info-top-bar-categories" class="top-bar-list">   
-                    <li class="food-info-categories-item top-bar-item">Meals</li>
-                    <li class="food-info-categories-item top-bar-item">Meats</li>
-                    <li class="food-info-categories-item top-bar-item">Dairy</li>
-                    <li class="food-info-categories-item top-bar-item">Fruits</li>
-                    <li class="food-info-categories-item top-bar-item">Vegetables</li>
+                    <li class="food-info-categories-item top-bar-item" id="meals-filter">Meals</li>
+                    <li class="food-info-categories-item top-bar-item" id="meats-filter">Meats</li>
+                    <li class="food-info-categories-item top-bar-item" id="dairy-filter">Dairy</li>
+                    <li class="food-info-categories-item top-bar-item" id="fruits-filter">Fruits</li>
+                    <li class="food-info-categories-item top-bar-item" id="vegetables-filter">Vegetables</li>
                 </ul>
             </nav>
             <div id="products-wrapper">
@@ -98,7 +98,7 @@
                 <div class="right-side">
                     <h1>{{name}}</h1>
                     <ul class="product-specs">
-                        <li>Type: {{type}}</li>
+                        <li>Type: <span class="product-type">{{type}}</span></li>
                         <li>{{quantity}}</li>
                         <li>{{unit}}</li>
                         <li>Expires in: <span>{{getRemainingDays}}</span> days</li>
