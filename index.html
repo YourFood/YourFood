@@ -12,17 +12,17 @@
         <div id="left-side-bar">
             <div id="logo-container">(Logo)</div>
             <ul id="screen-tabs-menu">
-				<li class="left-side-item selected" id="food-info-btn">
+				<li class="left-side-item selected" id="food-info-btn" data-info="food-info-screen">
                    <div class="icon-container">
                        <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                    </div>          
                 </li>
-				<li class="left-side-item" id="recipies-info-btn">
+				<li class="left-side-item" id="recipies-info-btn" data-info="recipies-screen>
 					<div class="icon-container" >
                         <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                     </div>
                 </li>
-				<li class="left-side-item" id="shopping-info-btn">
+				<li class="left-side-item" id="shopping-info-btn" data-info="shopping-list-screen">
                     <div class="icon-container">
                         <img alt="fridge" src="images/left-aside-icons/fridge-icon.png">
                     </div>
@@ -54,11 +54,11 @@
                     <li class="food-info-categories-item top-bar-item">New</li>
                 </ul>
             </nav>
-            <div id="recipies-content">
+            <div id="recipes-content">
             </div>
         </div>
         
-        <div id="shoping-list-screen" class="screen">
+        <div id="shopping-list-screen" class="screen">
             <div id="shopping-list">
             </div>
         </div>
@@ -107,7 +107,7 @@
     </script>
 
 
-    <script id="recipies-template" type='text/x-handlebars-template'>
+    <script id="recipes-template" type='text/x-handlebars-template'>
         <div class="recipies-container">
             {{#recipies}}
             <div class="recipe">
@@ -151,8 +151,8 @@
             var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
 
             var recipies = data.currentRecipes;
-            var recipiesContainer = document.getElementById('recipies-content');
-            var recipiesTemplate = Handlebars.compile(document.getElementById('recipies-template').innerHTML);
+            var recipiesContainer = document.getElementById('recipes-content');
+            var recipiesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
 
             recipiesContainer.innerHTML = recipiesTemplate({
                 recipies : recipies
