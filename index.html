@@ -142,7 +142,7 @@
 
     <script id="recipes-template" type='text/x-handlebars-template'>
         <div class="recipes-container">
-            {{#recipies}}
+            {{#recipes}}
             <div class="recipe">
                 <h3>{{name}}</h3>
                 <img src="{{image}}" alt="no-recipe img"/>
@@ -157,7 +157,7 @@
                     {{description}} <span>{{this.getRating}}</span>
                 </p>
             </div>
-            {{/recipies}}
+            {{/recipes}}
         </div>
     </script>
     <script src="libs/handlebars-v1.3.0.js"></script>
@@ -171,6 +171,7 @@
     <script src="libs/jquery-2.1.1.min.js"></script>
     <script src="scripts/menuWindowsSwitch.js"></script>
     <script src="scripts/productsFilters.js"></script>
+    <script src="scripts/shoppingListSlidedown.js"></script>
     <script>
         window.onload = function()        {
             var products= data.currentProducts;
@@ -183,12 +184,12 @@
             var shoppingListContainer = document.getElementById('shopping-list');
             var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
 
-            var recipies = data.currentRecipes;
-            var recipiesContainer = document.getElementById('recipes-content');
-            var recipiesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
+            var recipes = data.currentRecipes;
+            var recipesContainer = document.getElementById('recipes-content');
+            var recipesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
 
-            recipiesContainer.innerHTML = recipiesTemplate({
-                recipies : recipies
+            recipesContainer.innerHTML = recipesTemplate({
+                recipes : recipes
             });
 
             shoppingListContainer.innerHTML = shoppingListTemplate({
@@ -200,7 +201,6 @@
             });
         }
     </script>
-    <script src="scripts/shoppingListSlidedown.js"></script>
 </body>
 
 </html>
