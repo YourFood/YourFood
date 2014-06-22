@@ -28,10 +28,10 @@
     });
 
 
-    $('.product-container').on('click', function () {
-        var $this = this;
-        $this.next('.product-options').slideDown();
-    });
+//    $('.product-container').on('click', function () {
+//        var $this = this;
+//        $this.find('.product-options').slideDown();
+//    });
 
     function sortByExpirationDate(first, second) {
         var remainingDaysFirst = $(first).find('.expires').text();

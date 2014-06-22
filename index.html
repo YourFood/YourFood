@@ -186,40 +186,39 @@
     <script src="scripts/kitchenObjects.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/main.js"></script>
+    
+    <script>
+        var products= data.currentProducts;
+        var productsContainer = document.getElementById('products');
+        var productsTemplate = Handlebars.compile((document.getElementById('product-template').innerHTML));
+
+        var shoppingList = data.shoppingList;
+        shoppingList.created = new Date();
+        shoppingList.img = 'some img';
+        var shoppingListContainer = document.getElementById('shopping-list');
+        var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
+
+        var recipes = data.currentRecipes;
+        var recipesContainer = document.getElementById('recipes-content');
+        var recipesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
+
+        recipesContainer.innerHTML = recipesTemplate({
+            recipes : recipes
+        });
+
+        shoppingListContainer.innerHTML = shoppingListTemplate({
+            shoppingList : shoppingList
+        });
+
+        productsContainer.innerHTML = productsTemplate({
+            products: products
+        });
+    </script>
+
     <script src="libs/jquery-2.1.1.min.js"></script>
     <script src="scripts/menuWindowsSwitch.js"></script>
     <script src="scripts/productsFilters.js"></script>
     <script src="scripts/shoppingListSlidedown.js"></script>
-    
-    <script>
-        window.onload = function()        {
-            var products= data.currentProducts;
-            var productsContainer = document.getElementById('products');
-            var productsTemplate = Handlebars.compile((document.getElementById('product-template').innerHTML));
-
-            var shoppingList = data.shoppingList;
-            shoppingList.created = new Date();
-            shoppingList.img = 'some img';
-            var shoppingListContainer = document.getElementById('shopping-list');
-            var shoppingListTemplate = Handlebars.compile((document.getElementById('shopping-list-template').innerHTML));
-
-            var recipes = data.currentRecipes;
-            var recipesContainer = document.getElementById('recipes-content');
-            var recipesTemplate = Handlebars.compile(document.getElementById('recipes-template').innerHTML);
-
-            recipesContainer.innerHTML = recipesTemplate({
-                recipes : recipes
-            });
-
-            shoppingListContainer.innerHTML = shoppingListTemplate({
-                shoppingList : shoppingList
-            });
-
-            productsContainer.innerHTML = productsTemplate({
-                products: products
-            });
-        }
-    </script>
 </body>
 
 </html>

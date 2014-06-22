@@ -12,21 +12,30 @@ $(function () {
 
                 if ( $description.data('info') === 'hidden-description' ) {
                     $description.data('info','');
-                    $description.show( "slow" );
+                    $description.hide( "slow" );
                 } else {
                     $description.data('info', 'hidden-description');
-                    $description.slideUp();
+                    $description.slideDowh();
                 }
             })
         })
     })
 
-    var $trigger = $('#logo-container');
+    var $productContainers = $('.product-container')
 
-    $trigger.on('click', function () {
-        var $productContainer = $('.product-container');
+    $productContainers.each(function(){
+        var $this = $(this);
 
-        console.log($productContainer);
+        $this.on('click', function () {
+            var $itemDescription = $this.find('.product-options');
 
-    }).click();
+            if ( $itemDescription.data('info') === 'hidden-item-description' ) {
+                $itemDescription.data('info','');
+                $itemDescription.show( "slow" );
+            } else {
+                $itemDescription.data('info', 'hidden-item-description');
+                $itemDescription.slideUp();
+            }
+        })
+    })
 });
