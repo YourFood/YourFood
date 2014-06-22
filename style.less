@@ -17,7 +17,7 @@ body {
     font-size: 18px;
 }
 
-.clearfix, .left-side, .right-side, .product-container {
+.clearfix, .left-side, .recipe.item, .right-side, .recipe-info, .product-container, .recipe-image-holder, #recipes-content.list-style, .recipe.item, .recipe.item img, .recipe-info {
   display: block;
   zoom: 1;
 
@@ -68,10 +68,8 @@ body {
 
 // Shoping List Top Bar Variables 
 @shoping-list-top-bar-lists-count: 1;
-@shoping-list-top-bar-items-count: 4;
-@shoping-list-top-bar-height: @top-bar-list-height * @food-info-top-bar-lists-count;
+@shoping-list-top-bar-height: @top-bar-list-height * @shoping-list-top-bar-lists-count;
 @shoping-list-top-bar-list-height: 100% / @shoping-list-top-bar-lists-count;
-@shoping-list-top-bar-item-width: 100% / @shoping-list-top-bar-items-count;
 
 #food-info-screen {
     
@@ -167,16 +165,18 @@ body {
     }
 }
 
-#shoping-list-screen {
-
+#shopping-list-screen {
+    
     .top-bar {
         height: @shoping-list-top-bar-height;
 
         .top-bar-list {
             height: @shoping-list-top-bar-list-height;
+            background-color: @light-blue;
+            color: @white-blue;
 
             .top-bar-item {
-                width: @shoping-list-top-bar-item-width;
+                float: left;
             }
         }    
     }
@@ -244,7 +244,22 @@ body {
     
     .recipe.item {
         border-bottom: 1px solid @mid-blue;
-        position: relative;
-        color: #333;      
+        color: #333;
+        height: 215px;
+        overflow: hidden;
+        
+        .recipe-image-holder {
+            width: 20%;
+            height: 100%;
+            overflow: hidden;
+            float: left;
+            margin-right: 4%;
+        }
+            
+        .recipe-info {
+            width: 75%;
+            float: left;
+        }
     }
 }
+

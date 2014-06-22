@@ -18,15 +18,29 @@ body {
 }
 .clearfix,
 .left-side,
+.recipe.item,
 .right-side,
-.product-container {
+.recipe-info,
+.product-container,
+.recipe-image-holder,
+#recipes-content.list-style,
+.recipe.item,
+.recipe.item img,
+.recipe-info {
   display: block;
   zoom: 1;
 }
 .clearfix:after,
 .left-side:after,
+.recipe.item:after,
 .right-side:after,
-.product-container:after {
+.recipe-info:after,
+.product-container:after,
+.recipe-image-holder:after,
+#recipes-content.list-style:after,
+.recipe.item:after,
+.recipe.item img:after,
+.recipe-info:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -101,14 +115,16 @@ body {
 #recipes-screen #recipes-top-bar-categories .recipe-categories-item.selected-recipes {
   border-bottom: 4px solid green;
 }
-#shoping-list-screen .top-bar {
-  height: 10%;
+#shopping-list-screen .top-bar {
+  height: 5%;
 }
-#shoping-list-screen .top-bar .top-bar-list {
+#shopping-list-screen .top-bar .top-bar-list {
   height: 100%;
+  background-color: #a4a4cb;
+  color: #d4d4e7;
 }
-#shoping-list-screen .top-bar .top-bar-list .top-bar-item {
-  width: 25%;
+#shopping-list-screen .top-bar .top-bar-list .top-bar-item {
+  float: left;
 }
 .items-container.list-style .product-container.item {
   border-bottom: 1px solid #7373ab;
@@ -158,6 +174,18 @@ body {
 }
 #recipes-content.list-style .recipe.item {
   border-bottom: 1px solid #7373ab;
-  position: relative;
   color: #333;
+  height: 215px;
+  overflow: hidden;
+}
+#recipes-content.list-style .recipe.item .recipe-image-holder {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  float: left;
+  margin-right: 4%;
+}
+#recipes-content.list-style .recipe.item .recipe-info {
+  width: 75%;
+  float: left;
 }

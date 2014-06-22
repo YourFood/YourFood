@@ -83,8 +83,11 @@
         </div>
         
         <div id="shopping-list-screen" class="screen">
-            <nav>
-
+            <nav class="top-bar">
+                <ul id="shopping-list-top-bar-buttons" class="top-bar-list">   
+                    <li class="shopping-list-item top-bar-item">(Add New Item)</li>
+                    <li class="shopping-list-item top-bar-item">(Settings)</li>
+                </ul>
             </nav>
             <div id="shopping-list-wrapper">
                 <div id="shopping-list">              
@@ -129,45 +132,46 @@
     <script id="recipes-template" type='text/x-handlebars-template'>
         <div class="recipes-container">
             {{#recipes}}
-            <div class="recipe item">
-               <div class="recipe-heading">
-                   <img src="{{image}}" alt="no-recipe img"/>
-                    <h3>{{name}}</h3>               
-               </div>
-               <div class="recipe-info">
-                   <ul class="recipe-products">
-                        {{#products}}
-                            <li>
-                                <strong>{{name}} {{quantity}} {{unit}}</strong>
-                            </li>
-                        {{/products}}
-                    </ul>
+                <div class="recipe item">
+                   <div class="recipe-image-holder">
+                       <img src="{{image}}" alt="no-recipe img"/>
+                   </div>            
+                    <div class="recipe-info">
+                         <h3>{{name}}</h3>
+                        <ul class="recipe-products">
+                            {{#products}}
+                                <li>
+                                    <strong>{{name}} {{quantity}} {{unit}}</strong>
+                                </li>
+                            {{/products}}
+                        </ul>
+                    </div>              
                     <p>
                         {{description}} <span>{{this.getRating}}</span>
-                    </p>
-               </div>                       
-            </div>
+                    </p>                     
+                </div>
             {{/recipes}}
         </div>
     </script>
     
     <script id="shopping-list-template" type='text/x-handlebars-template'>
         <div class="shopping-list-container">
+<!--
             <p>
                 Active :<strong>{{#if shoppingList.isActive}} true{{else}} False {{/if}}</strong> Date : <strong>{{shoppingList.created}}</strong> <strong>CHECKER/TICK</strong>
             </p>
+-->
             {{#shoppingList.products}}
-            <div class="shopping-list-products-container">
-                <img src="{{image}}" alt="no-image"/>
-                <h1>{{name}}</h1>
-                <div class="shopping-list-product-specs">
-                    <ul>
-                        <li>Type: {{type}}</li>
-                        <li>Units: {{unit}}</li>
-                        <li>Quantity: {{quantity}}</li>
-                    </ul>
+                <div class="shopping-list-products-container">
+                    <h1>{{name}}</h1>
+                    <div class="shopping-list-product-specs">
+                        <ul>
+                            <li>Type: {{type}}</li>
+                            <li>Units: {{unit}}</li>
+                            <li>Quantity: {{quantity}}</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
             {{/shoppingList.products}}
         </div>
     </script>
