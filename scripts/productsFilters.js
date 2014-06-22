@@ -22,7 +22,7 @@
         var categoryTitle = ev.target.innerHTML.toLowerCase();
 
         $.each($('.product-container'), function () {
-            var type = $(this).find('.product-type')[0].innerHTML.toLowerCase();
+            var type = $(this).find('.product-type').data('type').toLowerCase();
 
             if (categoryTitle === type || categoryTitle === 'all') {
                 $(this).show();
