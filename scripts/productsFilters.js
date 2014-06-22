@@ -12,6 +12,12 @@
         $('#products').empty().append(sorted);
     });
 
+    var $orderAlphabetically = $foodNav.find('#food-sort-alphabet').on('click', function () {
+        var sorted = $('#products .product-container').sort(sortAlphabetically);
+
+        $('#products').empty().append(sorted);
+    });
+
     $('#food-info-top-bar-categories').on('click', 'li', function (ev) {
         var categoryTitle = ev.target.innerHTML.toLowerCase();
 
@@ -32,6 +38,13 @@
 //        var $this = this;
 //        $this.find('.product-options').slideDown();
 //    });
+
+    function sortAlphabetically(first, second) {
+        var firstName = $(first).find('h1').text();
+        var secondName = $(second).find('h1').text();
+
+        return firstName > secondName ? 1 : -1;
+    }
 
     function sortByExpirationDate(first, second) {
         var remainingDaysFirst = $(first).find('.expires').text();
