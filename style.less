@@ -182,10 +182,9 @@ body {
     }
 }
 
-.list-style {
-    .product-container {
-        width: 100%;
-        padding: 1%;
+.items-container.list-style {
+    
+    .product-container.item {
         border-bottom: 1px solid @mid-blue;
         position: relative;
         color: #333;
@@ -235,5 +234,17 @@ body {
             }
         }       
     }
+}
 
+#recipes-wrapper {   
+    height: 100% - @recipies-top-bar-height;
+}
+
+#recipes-content.list-style {
+    
+    .recipe.item {
+        border-bottom: 1px solid @mid-blue;
+        position: relative;
+        color: #333;      
+    }
 }

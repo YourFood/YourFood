@@ -102,15 +102,6 @@ body {
     &.current {
         display: block;
     }
-    
-    .items-wrapper {
-        
-        .items-container{
-            width: 105%;
-            height: 100%;
-            overflow-y: scroll;   
-        }
-    }
 }
 
 .top-bar {
@@ -124,5 +115,23 @@ body {
             height: @top-bar-list-item-height;
             padding: 0.7%;
         }
+    }
+}
+
+.items-wrapper {
+    width: 100%;
+    
+    .items-container{
+        width: 105%;
+        height: 100%;
+        overflow-y: scroll;   
+    }
+}
+
+.list-style {
+    
+    .item {
+        width: 100%;
+        padding: 1%;
     }
 }

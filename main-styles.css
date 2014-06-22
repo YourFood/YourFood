@@ -67,11 +67,6 @@ body {
 .screen.current {
   display: block;
 }
-.screen .items-wrapper .items-container {
-  width: 105%;
-  height: 100%;
-  overflow-y: scroll;
-}
 .top-bar {
   width: 100%;
 }
@@ -82,4 +77,16 @@ body {
 .top-bar .top-bar-list .top-bar-item {
   height: 100%;
   padding: 0.7%;
+}
+.items-wrapper {
+  width: 100%;
+}
+.items-wrapper .items-container {
+  width: 105%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.list-style .item {
+  width: 100%;
+  padding: 1%;
 }

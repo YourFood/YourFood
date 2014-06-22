@@ -110,48 +110,54 @@ body {
 #shoping-list-screen .top-bar .top-bar-list .top-bar-item {
   width: 25%;
 }
-.list-style .product-container {
-  width: 100%;
-  padding: 1%;
+.items-container.list-style .product-container.item {
   border-bottom: 1px solid #7373ab;
   position: relative;
   color: #333;
 }
-.list-style .product-container .left-side {
+.items-container.list-style .product-container.item .left-side {
   margin-left: 1%;
   width: 5%;
   height: 100%;
   float: left;
   margin-right: 0.5%;
 }
-.list-style .product-container .left-side .image-holder {
+.items-container.list-style .product-container.item .left-side .image-holder {
   width: 100%;
   border: 1px solid black;
 }
-.list-style .product-container .left-side .image-holder img {
+.items-container.list-style .product-container.item .left-side .image-holder img {
   display: block;
   width: 100%;
   height: auto;
 }
-.list-style .product-container .right-side {
+.items-container.list-style .product-container.item .right-side {
   margin-left: 1%;
   width: 90%;
   height: 100%;
   float: left;
 }
-.list-style .product-container .right-side .product-specs {
+.items-container.list-style .product-container.item .right-side .product-specs {
   width: 30%;
   top: 40%;
   right: 5%;
   position: absolute;
 }
-.list-style .product-container .right-side h1 {
+.items-container.list-style .product-container.item .right-side h1 {
   font-size: 1.4rem;
 }
-.list-style .product-container .right-side ul {
+.items-container.list-style .product-container.item .right-side ul {
   list-style-type: none;
   font-size: 0.8rem;
 }
-.list-style .product-container .right-side ul li {
+.items-container.list-style .product-container.item .right-side ul li {
   display: inline-block;
+}
+#recipes-wrapper {
+  height: 90%;
+}
+#recipes-content.list-style .recipe.item {
+  border-bottom: 1px solid #7373ab;
+  position: relative;
+  color: #333;
 }
