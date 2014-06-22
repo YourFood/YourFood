@@ -82,9 +82,6 @@ body {
   width: 100%;
   height: 90%;
 }
-#food-info-screen #products-wrapper #products .product-options {
-  display: none;
-}
 #recipes-screen .top-bar {
   height: 10%;
   border-bottom: 1px solid #a4a4cb;
@@ -125,6 +122,26 @@ body {
 }
 #shopping-list-screen .top-bar .top-bar-list .top-bar-item {
   float: left;
+}
+#shopping-list-screen #shopping-list-wrapper {
+  width: 100%;
+  height: 95%;
+}
+#shopping-list-screen #shopping-list-wrapper #shopping-list .shopping-list-products-container {
+  border-bottom: 1px solid #a4a4cb;
+  padding: 1%;
+}
+#shopping-list-screen #shopping-list-wrapper #shopping-list .shopping-list-products-container h1 {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+#shopping-list-screen #shopping-list-wrapper #shopping-list .shopping-list-products-container ul {
+  display: inline-block;
+  list-style-type: none;
+}
+#shopping-list-screen #shopping-list-wrapper #shopping-list .shopping-list-products-container ul li {
+  float: left;
+  margin-right: 10px;
 }
 .items-container.list-style .product-container.item {
   border-bottom: 1px solid #7373ab;
@@ -175,7 +192,7 @@ body {
 #recipes-content.list-style .recipe.item {
   border-bottom: 1px solid #7373ab;
   color: #333;
-  height: 215px;
+  height: 212px;
   overflow: hidden;
 }
 #recipes-content.list-style .recipe.item .recipe-image-holder {

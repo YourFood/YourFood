@@ -179,6 +179,34 @@ body {
             }
         }    
     }
+    
+    #shopping-list-wrapper {
+        width: 100%;
+        height: 100% - @shoping-list-top-bar-height;
+        
+        #shopping-list {
+            
+            .shopping-list-products-container {
+                border-bottom: 1px solid @light-blue;
+                padding: 1%;
+                
+                h1 {
+                    display: inline-block;
+                    font-size: 1.2rem;
+                }
+                
+                ul {
+                    display: inline-block;
+                    list-style-type: none;
+                    
+                    li {
+                        float: left;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }     
 }
 
 .items-container.list-style {
@@ -244,7 +272,7 @@ body {
     .recipe.item {
         border-bottom: 1px solid @mid-blue;
         color: #333;
-        height: 215px;
+        height: 212px;
         overflow: hidden;
         
         .recipe-image-holder {
