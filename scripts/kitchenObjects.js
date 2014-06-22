@@ -3,7 +3,7 @@ var Kitchen = (function() {
 
     function Product(name, image, type, unit, quantity, expirationDate) {
         this.name = name;
-        this.image = 'images/products/coffee_pot.png';
+        this.image = image;
         this.type = type;
         this.unit = unit;
         this.quantity = quantity;
