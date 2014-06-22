@@ -20,4 +20,13 @@ $(function () {
             })
         })
     })
+
+    var $trigger = $('#logo-container');
+
+    $trigger.on('click', function () {
+        var $productContainer = $('.product-container');
+
+        console.log($productContainer);
+
+    }).click();
 });
