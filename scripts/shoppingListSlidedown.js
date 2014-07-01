@@ -15,13 +15,13 @@ $(function () {
                     $description.hide( "slow" );
                 } else {
                     $description.data('info', 'hidden-description');
-                    $description.slideDowh();
+                    $description.slideDown();
                 }
             })
         })
     })
 
-    var $productContainers = $('.product-container')
+    var $productContainers = $('.product-container');
 
     $productContainers.each(function(){
         var $this = $(this);
@@ -31,11 +31,11 @@ $(function () {
 
             if ( $itemDescription.data('info') === 'hidden-item-description' ) {
                 $itemDescription.data('info','');
-                $itemDescription.show( "slow" );
+                $itemDescription.hide( 1000 );
             } else {
                 $itemDescription.data('info', 'hidden-item-description');
-                $itemDescription.slideUp();
+                $itemDescription.slideDown();
             }
-        })
+        }).click().click();
     })
 });
